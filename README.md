@@ -83,6 +83,25 @@ Ce dossier sera surveillé par Spark Streaming.
 
 Tester l'ajour la possibilité de mettre le dataset ``adult_new_data.csv``, Dans le cas ou ce n'est pas possible, faites appel à votre super prof ! 
 
+Il y a des restrictions de permissions sur les dossiers ``work`` et ``stream-read`` qui sont montés depuis la machine hôte qu'il faut fixer :
+
+- Sur Linux (dans le cas de codespace par exemple):
+
+```bash
+# Accorder les permissions pleines (attention à la sécurité, dans la vraie vie)
+sudo chmod -R 777 work stream-read
+```
+
+
+- Sur Widows via powerShell:
+
+```bash
+# Accorder les permissions complètes
+icacls "C:\chemin\vers\spark-streaming\work" /grant:r "%username%:(F)" /t /c
+icacls "C:\chemin\vers\spark-streaming\stream-read" /grant:r "%username%:(F)" /t /c
+```
+
+
 ---
 
 # 4. Première approche du streaming
